@@ -1,133 +1,146 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amamentação Sem Dor em 7 Dias — Método Antifissura</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --lux-bg: #faf7f5;
+      --lux-text: #3a2e2a;
+      --lux-gold: #d4b48c;
+      --lux-rose: #e8d2c4;
+      --lux-dark: #2a1e1b;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--lux-bg);
+      color: var(--lux-text);
+      line-height:1.5;
+    }
+    header.hero {
+      padding:120px 20px;
+      text-align:center;
+      background: linear-gradient(135deg, #f9f3ef, #f2e7e2);
+    }
+    .hero h1 {
+      font-family:'Playfair Display', serif;
+      font-size:3rem;
+      max-width:900px;
+      margin:0 auto 20px;
+      color:var(--lux-dark);
+    }
+    .hero p {
+      max-width:700px;
+      margin:0 auto 40px;
+      font-size:1.25rem;
+      opacity:0.8;
+    }
+    .btn-primary {
+      background:var(--lux-gold);
+      padding:16px 32px;
+      border-radius:50px;
+      color:white;
+      font-weight:600;
+      font-size:1.1rem;
+      text-decoration:none;
+      display:inline-block;
+      transition:0.3s;
+    }
+    .btn-primary:hover{
+      background:#c6a074;
+    }
+    section {
+      padding:100px 20px;
+      max-width:1100px;
+      margin:auto;
+    }
+    h2.section-title{
+      font-family:'Playfair Display', serif;
+      font-size:2.5rem;
+      text-align:center;
+      margin-bottom:40px;
+      color:var(--lux-dark);
+    }
+    .grid-2 {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+    }
+    .card {
+      background:white;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+    footer {
+      text-align:center;
+      padding:40px 20px;
+      margin-top:80px;
+      background:white;
+      color:#988;
+    }
+    @media(max-width:900px){
+      .grid-2{ grid-template-columns:1fr; }
+      .hero h1{ font-size:2.3rem; }
+    }
+  </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <nav class="nav">
-        <div class="brand">Método Antifissura</div>
-        <a class="cta-nav" href="#purchase">Quero Amamentar Sem Dor</a>
-      </nav>
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Acabe com a dor ao amamentar em apenas <span class="accent">7 dias</span>.</h1>
-          <p class="lead">Descubra o Método Antifissura usado por consultoras maternas para recuperar seios feridos, corrigir a pega e trazer paz para as mamadas.</p>
-          <a id="purchase" class="btn-primary" href="#checkout">Quero amamentar sem dor — R$27</a>
-          <p class="small">Acesso imediato • Garantia de 7 dias</p>
-        </div>
-        <div class="hero-card">
-          <div class="card-inner">
-            <h3>O que você recebe</h3>
-            <ul>
-              <li>3 aulas práticas e objetivas</li>
-              <li>Checklist antifissura (PDF)</li>
-              <li>Guia de posições</li>
-              <li>PDF da pega correta</li>
-              <li>Acesso vitalício</li>
-            </ul>
-            <a class="btn-secondary" href="#checkout">Começar por R$27</a>
-          </div>
-        </div>
-      </div>
+
+<header class="hero">
+  <h1>Amamentação Sem Dor em 7 Dias — O Método Premium Antifissura</h1>
+  <p>Um guia luxuoso, moderno e científico criado para mães sofisticadas que desejam viver a maternidade com conforto, tranquilidade e zero dor ao amamentar.</p>
+  <a href="#oferta" class="btn-primary">Quero Amamentar Sem Dor</a>
+</header>
+
+<section>
+  <h2 class="section-title">A Dor Não Faz Parte da Maternidade</h2>
+  <div class="grid-2">
+    <div class="card">
+      <p>Se você sente dor, ardência, cortes, sangramento ou insegurança na hora de amamentar, saiba: isso não é normal. O Método Antifissura foi criado para mulheres que valorizam conforto, saúde e bem-estar — e que desejam uma solução segura, acolhedora e comprovada.</p>
     </div>
-  </header>
-
-  <main class="container">
-    <section class="pain">
-      <h2>Se você está sofrendo para amamentar, saiba disso:</h2>
-      <ul class="pain-list">
-        <li>Dor não é normal.</li>
-        <li>Fissuras não são "parte da maternidade".</li>
-        <li>Mamar chorando não é saudável para você nem para o bebê.</li>
-        <li>A culpa não é sua.</li>
-        <li>Ninguém nasce sabendo amamentar.</li>
-      </ul>
-      <p class="muted">Você só precisa da técnica certa — e ela funciona muito mais rápido do que te disseram.</p>
-    </section>
-
-    <section class="solution">
-      <h2>O Método Antifissura em 7 Dias</h2>
-      <p>Criado para mães que precisam parar a dor, corrigir a pega, recuperar os seios, ganhar confiança e voltar a amamentar com tranquilidade. É simples, rápido e direto ao ponto.</p>
-      <div class="grid">
-        <div class="card">
-          <h3>Aula 1</h3>
-          <p>Pega perfeita e ajustes que eliminam dor na hora (15 min)</p>
-        </div>
-        <div class="card">
-          <h3>Aula 2</h3>
-          <p>Cicatrização acelerada das fissuras (12 min)</p>
-        </div>
-        <div class="card">
-          <h3>Aula 3</h3>
-          <p>Rotina antidolor + checklist dos 7 dias (10 min)</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="learn">
-      <h2>O que você vai aprender</h2>
-      <ul>
-        <li>Como fazer o bebê pegar corretamente, mesmo com fissura</li>
-        <li>Como corrigir a pega sem soltar o bebê</li>
-        <li>Como cicatrizar fissuras rápido</li>
-        <li>Como evitar que a dor volte</li>
-        <li>Posições que reduzem pressão nos mamilos</li>
-        <li>Rotina antifissura dos primeiros 7 dias</li>
-        <li>Checklist diário de progresso</li>
-      </ul>
-    </section>
-
-    <section class="author">
-      <div class="author-inner">
-        <div class="author-photo"></div>
-        <div class="author-bio">
-          <h3>Sobre Maria</h3>
-          <p>Maria é consultora materna especializada em amamentação, pós-parto e laserterapia para fissuras. Já ajudou dezenas de mães a corrigirem a pega, eliminarem dor e retomarem a amamentação com segurança. O Método Antifissura nasceu da prática real, com resultados imediatos para mães com dor intensa e fissuras profundas.</p>
-          <p class="note">Atendimento presencial disponível (laserterapia) — agende após a compra.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="offer" id="checkout">
-      <h2>Oferta Especial — R$27</h2>
-      <p>Por tempo limitado, o Método Antifissura está disponível por apenas <strong>R$27</strong>.</p>
-      <ul>
-        <li>3 aulas práticas e objetivas</li>
-        <li>Checklist antifissura</li>
-        <li>Guia de posições</li>
-        <li>PDF da pega correta</li>
-        <li>Acesso vitalício</li>
-      </ul>
-      <a class="btn-primary" href="#purchase">Quero o método antifissura por R$27</a>
-      <p class="guarantee">Use por 7 dias. Se você não sentir alívio real, devolvemos o valor. Simples assim.</p>
-    </section>
-
-    <section class="faq">
-      <h2>Perguntas frequentes</h2>
-      <div class="qa">
-        <details><summary>Isso funciona se eu já tiver fissuras profundas?</summary><div class="answer">Sim. O curso ensina técnicas de pega, cuidados e um protocolo de cicatrização. Para fissuras muito profundas ou sangramento intenso, pode ser necessária sessão de laser — você terá essa opção.</div></details>
-        <details><summary>Quanto tempo dura cada aula?</summary><div class="answer">As aulas são curtas: 10–15 minutos cada, objetivas e práticas.</div></details>
-        <details><summary>Posso acessar pelo celular?</summary><div class="answer">Sim. A área do aluno é responsiva e funciona em celulares e tablets.</div></details>
-        <details><summary>Há garantia?</summary><div class="answer">Sim — 7 dias de garantia. Se não houver melhora, devolvemos o valor.</div></details>
-        <details><summary>O que é o bônus checklist?</summary><div class="answer">É um PDF prático que você pode imprimir e colar na geladeira com os passos diários para cicatrização.</div></details>
-        <details><summary>Como agendo sessão de laser?</summary><div class="answer">Após a compra você receberá instruções para agendar uma sessão presencial (se estiver disponível em sua cidade).</div></details>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 Método Antifissura • Todos os direitos reservados.</p>
-      <p class="small">Arquivo de referência incluído: /assets/Curso_para_mulheres.docx</p>
+    <div class="card">
+      <p>Baseado em técnicas de consultoria materna premium, evidências científicas e vivência real com mães de alta performance, o método resolve fissuras, corrige a pega e elimina a dor em poucos dias.</p>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<section>
+  <h2 class="section-title">O Que Você Vai Aprender</h2>
+  <div class="grid-2">
+    <div class="card"><ul>
+      <li>Como corrigir a pega do bebê com suavidade</li>
+      <li>Técnicas antifissura testadas e aprovadas</li>
+      <li>Posições que reduzem totalmente a dor</li>
+      <li>Como cicatrizar fissuras rapidamente</li>
+      <li>Rotina antifissura para os 7 primeiros dias</li>
+    </ul></div>
+    <div class="card"><ul>
+      <li>Como evitar que a dor volte</li>
+      <li>Checklist diário para acompanhar sua evolução</li>
+      <li>Como amamentar com mais confiança e segurança</li>
+      <li>Segredos usados por consultoras maternas premium</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="oferta">
+  <h2 class="section-title">Oferta Exclusiva de Lançamento</h2>
+  <div class="card" style="text-align:center; max-width:700px; margin:auto;">
+    <p style="font-size:1.3rem; margin-bottom:20px;">Acesso completo ao Método Antifissura — vídeo aulas, checklists, PDFs e suporte resumido.</p>
+    <p style="font-size:2.5rem; font-weight:700; margin-bottom:20px; color:var(--lux-dark);">Por apenas R$27</p>
+    <a class="btn-primary" href="#checkout">Quero garantir agora</a>
+  </div>
+</section>
+
+<footer>
+  © 2025 Método Antifissura — Todos os direitos reservados.
+</footer>
+
 </body>
 </html>
