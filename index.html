@@ -153,3 +153,77 @@
       .grid-2{ grid-template-columns:1fr; }
       .hero h1{ font-size:2.4rem; }
     }
+  </style>
+</head>
+
+<body>
+
+<header class="hero fade-in">
+  <div class="bubble bubble1"></div>
+  <div class="bubble bubble2"></div>
+
+  <h1>Amamentação Sem Dor em 7 Dias — O Método Premium Antifissura</h1>
+  <p>Um método luxuoso, acolhedor e cientificamente estruturado para mães sofisticadas que desejam viver a maternidade com conforto absoluto e zero dor ao amamentar.</p>
+
+  <div class="video-container">
+    <iframe width="100%" height="460" src="https://www.youtube.com/embed/VIDEO_ID" title="Método Antifissura" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <a href="#oferta" class="btn-primary">Quero Amamentar Sem Dor</a>
+</header>
+
+<section class="fade-in">
+  <h2 class="section-title">A Dor Não Faz Parte da Maternidade</h2>
+  <div class="grid-2">
+    <div class="card">
+      <p>Se você sente dor intensa, fissuras, ardência ou insegurança na hora de amamentar, saiba: não é falta de capacidade — é falta da técnica correta. E é exatamente isso que este método entrega.</p>
+    </div>
+    <div class="card">
+      <p>Desenvolvido com base em consultoria materna premium, técnicas modernas e cuidados de alta performance, o Método Antifissura foi criado para mães que exigem excelência e resultados rápidos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="fade-in">
+  <h2 class="section-title">O Que Você Vai Aprender</h2>
+  <div class="grid-2">
+    <div class="card"><ul>
+      <li>Correção imediata da pega — sem dor</li>
+      <li>Técnicas antifissura cientificamente comprovadas</li>
+      <li>Posições premium que reduzem pressão nos mamilos</li>
+      <li>Cicatrização acelerada das fissuras</li>
+      <li>Rotina antifissura para os 7 primeiros dias</li>
+    </ul></div>
+    <div class="card"><ul>
+      <li>Como evitar que a dor volte</li>
+      <li>Checklist diário de evolução</li>
+      <li>Hábitos que protegem seu conforto</li>
+      <li>Segredos usados por consultoras maternas de elite</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="oferta" class="fade-in">
+  <h2 class="section-title">Oferta Exclusiva de Lançamento</h2>
+  <div class="card" style="text-align:center; max-width:720px; margin:auto;">
+    <p style="font-size:1.4rem; margin-bottom:24px;">Acesso completo ao Método Antifissura: aulas, checklists, PDFs e orientações essenciais.</p>
+    <p style="font-size:2.7rem; font-weight:700; margin-bottom:22px; color:var(--lux-dark);">Por apenas R$27</p>
+    <a class="btn-primary lux-hover" href="#checkout">Quero garantir agora</a>
+  </div>
+</section>
+
+<footer class="fade-in">
+  © 2025 Método Antifissura — Todos os direitos reservados.
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
