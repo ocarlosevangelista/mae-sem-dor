@@ -1,229 +1,343 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Amamentação Sem Dor em 7 Dias — Método Antifissura</title>
+  <meta name="description" content="Recupere a pega, cicatrize fissuras e elimine a dor ao amamentar em até 7 dias com o Método Antifissura. Curso prático, garantido.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --lux-bg: #f8f4f1;
-      --lux-text: #3a2e2a;
-      --lux-gold: #ceb08a;
-      --lux-rose: #f1e3dd;
-      --lux-dark: #2a1e1b;
-      --soft-shadow: 0 12px 40px rgba(0,0,0,0.12);
-      --fade-duration: 0.9s;
+    :root{
+      --bg:#fbf7f5; --card:#fff; --text:#2b2422; --muted:#7a6f6b;
+      --accent:#c9a078; --accent2:#e9dfd6; --shadow: 0 18px 45px rgba(21,15,12,0.08);
+      --radius:18px; --maxw:1150px; --ease:cubic-bezier(.22,.9,.34,1);
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--lux-bg);
-      color: var(--lux-text);
-      line-height:1.5;
-      overflow-x:hidden;
-    }
-
-    /* Transições suaves */
-    .fade-in {
-      opacity:0;
-      transform: translateY(40px);
-      transition: opacity var(--fade-duration) ease, transform var(--fade-duration) ease;
-    }
-    .fade-in.visible {
-      opacity:1;
-      transform: translateY(0);
-    }
-
-    .lux-hover:hover {
-      transform: translateY(-6px);
-      box-shadow:0 20px 50px rgba(0,0,0,0.15);
-    }
-
-    header.hero {
-      padding:140px 20px;
-      text-align:center;
-      background: linear-gradient(145deg, #faeee8, #efe2dc);
-      position:relative;
-      overflow:hidden;
-    }
-
-    /* Bolhas animadas de luxo */
-    .bubble {
-      position:absolute;
-      border-radius:50%;
-      filter: blur(60px);
-      opacity:0.35;
-      animation: float 16s infinite ease-in-out;
-    }
-    @keyframes float {
-      0% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-40px) scale(1.15); }
-      100% { transform: translateY(0) scale(1); }
-    }
-
-    .bubble1 { width:280px; height:280px; background:#d8bfa6; top:-40px; right:-20px; }
-    .bubble2 { width:320px; height:320px; background:#e4d2c5; bottom:-60px; left:-40px; animation-delay:2s; }
-
-    .hero h1 {
-      font-family:'Playfair Display', serif;
-      font-size:3.4rem;
-      max-width:900px;
-      margin:0 auto 20px;
-      color:var(--lux-dark);
-    }
-    .hero p {
-      max-width:740px;
-      margin:0 auto 50px;
-      font-size:1.35rem;
-      opacity:0.85;
-    }
-
-    .video-container {
-      max-width:820px;
-      margin:40px auto 60px;
-      border-radius:24px;
-      overflow:hidden;
-      box-shadow:var(--soft-shadow);
-      transform:scale(0.94);
-      transition:0.6s ease;
-    }
-    .video-container:hover {
-      transform:scale(0.98);
-    }
-
-    .btn-primary {
-      background:var(--lux-gold);
-      padding:18px 38px;
-      border-radius:50px;
-      color:white;
-      font-weight:600;
-      font-size:1.15rem;
-      text-decoration:none;
-      display:inline-block;
-      transition:0.35s ease;
-      box-shadow:0 8px 22px rgba(0,0,0,0.12);
-    }
-    .btn-primary:hover{
-      background:#b89a74;
-      transform:translateY(-4px);
-      box-shadow:0 12px 28px rgba(0,0,0,0.18);
-    }
-
-    section {
-      padding:110px 20px;
-      max-width:1100px;
-      margin:auto;
-    }
-    h2.section-title{
-      font-family:'Playfair Display', serif;
-      font-size:2.7rem;
-      text-align:center;
-      margin-bottom:50px;
-      color:var(--lux-dark);
-    }
-
-    .grid-2 {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-    }
-
-    .card {
-      background:white;
-      padding:45px;
-      border-radius:24px;
-      box-shadow:var(--soft-shadow);
-      transition:0.4s ease;
-    }
-
-    .card:hover { transform:translateY(-6px); }
-
-    footer {
-      text-align:center;
-      padding:50px 20px;
-      margin-top:90px;
-      background:white;
-      color:#8a7d7a;
-    }
-
-    @media(max-width:900px){
-      .grid-2{ grid-template-columns:1fr; }
-      .hero h1{ font-size:2.4rem; }
-    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto; margin:0; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased;}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--maxw);margin:0 auto;padding:28px;}
+    /* NAV */
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 20px}
+    .brand{font-family:'Playfair Display',serif;font-size:20px;color:var(--text)}
+    .nav-cta{background:transparent;border:2px solid var(--accent);color:var(--accent);padding:10px 16px;border-radius:12px;font-weight:600}
+    /* HERO */
+    header.hero{padding:80px 20px 40px; text-align:center; position:relative; overflow:hidden}
+    .hero-inner{max-width:980px;margin:0 auto}
+    .hero h1{font-family:'Playfair Display',serif;font-size:42px;line-height:1.02;margin-bottom:12px}
+    .hero p.lead{font-size:18px;color:var(--muted);margin-bottom:18px;max-width:820px;margin-left:auto;margin-right:auto}
+    .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#ad855f);color:white;padding:14px 26px;border-radius:999px;font-weight:700;box-shadow:0 10px 30px rgba(167,125,99,0.18);transition:transform .28s var(--ease)}
+    .btn-primary:hover{transform:translateY(-4px)}
+    .btn-ghost{border:2px solid rgba(0,0,0,0.06);padding:12px 20px;border-radius:12px}
+    /* video */
+    .video-wrap{max-width:900px;margin:28px auto;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:transform .45s var(--ease)}
+    .video-wrap:hover{transform:translateY(-6px) scale(1.01)}
+    .video-wrap iframe{width:100%;height:520px;border:0;display:block}
+    /* decorative bubbles */
+    .bubble{position:absolute;border-radius:50%;filter:blur(60px);opacity:0.34;mix-blend-mode:soft-light}
+    .bubble.a{width:260px;height:260px;right:-60px;top:-40px;background:var(--accent2)}
+    .bubble.b{width:320px;height:320px;left:-80px;bottom:-60px;background:#e9dcd2;animation-delay:1.2s}
+    section{padding:68px 20px}
+    h2.section{font-family:'Playfair Display',serif;font-size:28px;margin-bottom:14px;text-align:center}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;transition:transform .36s var(--ease)}
+    .card:hover{transform:translateY(-6px)}
+    ul.clean{list-style:none;padding-left:0}
+    .bullets{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
+    .bullet{background:linear-gradient(180deg,#fff,#fff);padding:16px;border-radius:12px;border:1px solid rgba(0,0,0,0.04);font-weight:600}
+    .who-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .who{padding:18px;border-radius:14px;background:linear-gradient(180deg,#fff,#fbf9f8);border:1px solid rgba(0,0,0,0.03)}
+    .faq details{background:var(--card);padding:14px;border-radius:12px;margin-bottom:8px;box-shadow:var(--shadow)}
+    .fixed-cta{position:fixed;left:20px;right:20px;bottom:20px;display:flex;justify-content:center;pointer-events:auto;z-index:999}
+    .fixed-cta .btn-primary{padding:14px 28px}
+    footer{padding:36px 20px;text-align:center;color:var(--muted);font-size:14px;background:transparent}
+    .fade{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease), transform .7s var(--ease)}
+    .fade.visible{opacity:1;transform:none}
+    @media(max-width:900px){.grid-2{grid-template-columns:1fr} .video-wrap iframe{height:300px} .hero h1{font-size:28px}}
   </style>
 </head>
-
 <body>
 
-<header class="hero fade-in">
-  <div class="bubble bubble1"></div>
-  <div class="bubble bubble2"></div>
+  <div class="bubble a" aria-hidden="true"></div>
+  <div class="bubble b" aria-hidden="true"></div>
 
-  <h1>Amamentação Sem Dor em 7 Dias — O Método Premium Antifissura</h1>
-  <p>Um método luxuoso, acolhedor e cientificamente estruturado para mães sofisticadas que desejam viver a maternidade com conforto absoluto e zero dor ao amamentar.</p>
+  <header class="hero container" role="banner">
+    <nav class="nav" aria-label="Principal">
+      <div class="brand">Maria • Consultoria Materna</div>
+      <a class="nav-cta" href="#oferta">Garantir Acesso</a>
+    </nav>
 
-  <div class="video-container">
-    <iframe width="100%" height="460" src="https://www.youtube.com/embed/VIDEO_ID" title="Método Antifissura" frameborder="0" allowfullscreen></iframe>
-  </div>
+    <div class="hero-inner" role="main">
+      <h1>Amamentação Sem Dor em 7 Dias — Método Antifissura</h1>
+      <p class="lead">Recupere a pega correta, cicatrize fissuras e elimine a dor ao amamentar em até 7 dias — protocolo clínico-prático usado por consultoras maternas.</p>
 
-  <a href="#oferta" class="btn-primary">Quero Amamentar Sem Dor</a>
-</header>
+      <div class="cta-row">
+        <a class="btn-primary" href="#oferta">Quero começar — R$27</a>
+        <a class="btn-ghost" href="#para-quem">Para quem é</a>
+      </div>
 
-<section class="fade-in">
-  <h2 class="section-title">A Dor Não Faz Parte da Maternidade</h2>
-  <div class="grid-2">
-    <div class="card">
-      <p>Se você sente dor intensa, fissuras, ardência ou insegurança na hora de amamentar, saiba: não é falta de capacidade — é falta da técnica correta. E é exatamente isso que este método entrega.</p>
+      <div class="video-wrap fade" id="hero-video" aria-hidden="false">
+        <!-- TROQUE VIDEO_ID pelo ID do seu vídeo no YouTube (ex.: dQw4w9WgXcQ) -->
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0&showinfo=0" title="VSL: Método Antifissura" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
-    <div class="card">
-      <p>Desenvolvido com base em consultoria materna premium, técnicas modernas e cuidados de alta performance, o Método Antifissura foi criado para mães que exigem excelência e resultados rápidos.</p>
+  </header>
+
+  <!-- O QUE VOCÊ RECEBE -->
+  <section id="o-que-recebe" class="container fade">
+    <h2 class="section">O que você recebe</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Conteúdo prático e objetivo</h3>
+        <ul class="clean">
+          <li>3 aulas em vídeo (40 min no total) — demonstrações passo a passo</li>
+          <li>Checklist diário de 7 dias (PDF imprimível)</li>
+          <li>Guia de posições que aliviam (PDF)</li>
+          <li>Mini-aula sobre laserterapia (orientação clínica)</li>
+          <li>Aula bônus: suporte emocional para mães (10 min)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Bônus e suporte</h3>
+        <ul class="clean">
+          <li>Checklist para imprimir e colar na geladeira</li>
+          <li>PDF com scripts SOS e cuidados imediatos</li>
+          <li>Indicação e orientação para sessão de laser (quando indicado)</li>
+          <li>Garantia incondicional de 7 dias</li>
+        </ul>
+      </div>
     </div>
+  </section>
+
+  <!-- PARA QUEM É / NÃO É -->
+  <section id="para-quem" class="container fade">
+    <h2 class="section">Para quem é — e para quem não é</h2>
+    <div class="who-grid">
+      <div class="who">
+        <h4>Para quem é</h4>
+        <ul>
+          <li>Mães no pós-parto com dor ao amamentar</li>
+          <li>Mulheres de primeira viagem que desejam amamentar com segurança</li>
+          <li>Mães que querem uma solução prática, rápida e baseada em técnica</li>
+        </ul>
+      </div>
+      <div class="who">
+        <h4>Para quem não é</h4>
+        <ul>
+          <li>Quem busca soluções mágicas sem aplicar a técnica</li>
+          <li>Quem não está disposto a seguir a rotina dos primeiros dias</li>
+          <li>Quem prefere tentar remédios caseiros arriscados</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITUAÇÃO -->
+  <section id="problema" class="container fade">
+    <h2 class="section">Por que a maioria erra</h2>
+    <div class="grid-2">
+      <div class="card">
+        <p><strong>Paixão e desinformação:</strong> Muitas mães aprendem por tentativa e erro. Sem orientação, a pega incorreta vira fissura e dor.</p>
+      </div>
+      <div class="card">
+        <p><strong>Falta de técnica:</strong> Pequenos ajustes na posição podem eliminar a dor — o problema não é você, é falta de instrução correta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTODO -->
+  <section id="metodo" class="container fade">
+    <h2 class="section">O Método Antifissura — 7 dias</h2>
+    <div class="bullets">
+      <div class="bullet"><strong>Dia 1:</strong> Ajuste da pega — alivie a dor já na primeira mamada</div>
+      <div class="bullet"><strong>Dia 2:</strong> Cuidados de higiene e proteção noturna</div>
+      <div class="bullet"><strong>Dia 3:</strong> Ordenha tática e manejo de ingurgitamento</div>
+      <div class="bullet"><strong>Dia 4:</strong> Posições alternativas que aliviam pressão</div>
+      <div class="bullet"><strong>Day 5:</strong> Cicatrização acelerada (protocolos seguros)</div>
+      <div class="bullet"><strong>Dia 6:</strong> Avaliação prática: sinais de melhora</div>
+      <div class="bullet"><strong>Dia 7:</strong> Checklist final e plano para manter sem dor</div>
+    </div>
+  </section>
+
+  <!-- O QUE VOCÊ VAI APRENDER -->
+  <section id="o-que-aprende" class="container fade">
+    <h2 class="section">O que você vai aprender</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h4>Habilidades práticas</h4>
+        <ul class="clean">
+          <li>Corrigir a pega do bebê de forma indolor</li>
+          <li>Identificar sinais que exigem atenção clínica</li>
+          <li>Aplicar rotina de cicatrização diária</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Ferramentas e recursos</h4>
+        <ul class="clean">
+          <li>Checklist de 7 dias (imprimível)</li>
+          <li>Guias de posições (PDF)</li>
+          <li>Scripts SOS e orientações imediatas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRÍCULO DETALHADO -->
+  <section id="curriculo" class="container fade">
+    <h2 class="section">Currículo do curso</h2>
+    <div class="card">
+      <h3>Introdução</h3>
+      <p>Boas-vindas e como usar o programa (2 min) — onde começar para ver alívio rápido.</p>
+
+      <h3>Aula 1 — Pega Perfeita (15 min)</h3>
+      <p>Close técnico da pega profunda; como posicionar o bebê; 3 erros que causam dor e como corrigi-los agora.</p>
+
+      <h3>Aula 2 — Cicatrização Acelerada (12 min)</h3>
+      <p>Protocolos de limpeza, pomadas seguras, proteção noturna e o que evitar.</p>
+
+      <h3>Aula 3 — Rotina Antifissura (10 min)</h3>
+      <p>Checklist dos 7 dias, ordenha tática, prevenção de ingurgitamento e rotina do dia a dia.</p>
+
+      <h3>Bônus</h3>
+      <ul>
+        <li>Guia de posições com imagens (PDF)</li>
+        <li>Mini-aula: quando considerar laserterapia</li>
+        <li>Aula emocional de apoio (10 min)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- AUTORIDADE -->
+  <section id="autoridade" class="container fade">
+    <h2 class="section">Quem ensina — Maria</h2>
+    <div class="grid-2">
+      <div class="card">
+        <p>Maria é consultora materna especializada em amamentação, fissuras e laserterapia. Atua em atendimentos presenciais e online, ajudando mães a recuperar a amamentação com técnica e cuidado clínico.</p>
+      </div>
+      <div class="card">
+        <p>Por que confiar: prática clínica diária, resultados documentados com mães atendidas e abordagem que combina ciência e sensibilidade.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVAS -->
+  <section id="provas" class="container fade">
+    <h2 class="section">Provas e casos</h2>
+    <div class="grid-2">
+      <div class="card">
+        <strong>Depoimento (placeholder)</strong>
+        <p>“Em 5 dias a dor praticamente desapareceu. Consegui voltar a amamentar sem chorar.” — Juliana, 29</p>
+      </div>
+      <div class="card">
+        <strong>Micro-case</strong>
+        <p>Atendimento presencial: cliente com fissura profunda; 2 sessões de acompanhamento e protocolo caseiro — cicatrização acelerada em 10 dias.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section id="oferta" class="container fade">
+    <h2 class="section">Oferta Especial — Acesso Imediato</h2>
+    <div style="max-width:820px;margin:0 auto;text-align:center">
+      <div class="card" style="padding:28px;">
+        <p style="font-size:15px;margin-bottom:6px">Aulas, PDFs e checklist — acesso imediato</p>
+        <div style="font-size:36px;font-weight:800;color:var(--text);margin-bottom:8px">R$27</div>
+        <ul class="stack-list" style="list-style:none;padding:0;margin:10px 0 18px">
+          <li>• 3 aulas práticas</li>
+          <li>• Checklist 7 dias (PDF)</li>
+          <li>• Guia de posições</li>
+          <li>• Mini-aula laser + aula emocional</li>
+        </ul>
+        <div style="margin-bottom:14px">
+          <a class="btn-primary" href="#checkout" id="buy-now">Quero garantir por R$27</a>
+        </div>
+        <p style="font-size:14px;color:var(--muted)">Acesso vitalício • Garantia incondicional de 7 dias</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
+  <section id="garantia" class="container fade">
+    <h2 class="section">Garantia</h2>
+    <div class="card" style="max-width:820px;margin:0 auto;text-align:center">
+      <p>Teste o método por 7 dias. Se não sentir redução da dor ou não encontrar valor prático, devolvemos 100% do valor — sem perguntas.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="container fade">
+    <h2 class="section">Perguntas Frequentes</h2>
+    <div style="max-width:820px;margin:0 auto">
+      <div class="faq">
+        <details><summary>Quanto tempo tem cada aula?</summary><div style="padding:10px 0">Aulas objetivas: 10–20 minutos cada.</div></details>
+        <details><summary>Funciona se eu já tiver fissuras profundas?</summary><div style="padding:10px 0">Sim — a maioria responde ao protocolo. Casos graves podem requerer laser; o curso orienta quando buscar atendimento.</div></details>
+        <details><summary>Posso acessar no celular?</summary><div style="padding:10px 0">Sim — a área do aluno é responsiva.</div></details>
+        <details><summary>Receberei PDFs?</summary><div style="padding:10px 0">Sim — todos os PDFs ficam disponíveis para download na área do aluno.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECURSOS -->
+  <section id="recursos" class="container fade">
+    <h2 class="section">Recursos e referências</h2>
+    <div style="max-width:820px;margin:0 auto;text-align:center">
+      <p class="muted">Arquivos enviados durante o desenvolvimento (links locais incluídos):</p>
+      <p style="margin-top:10px"><a href="/mnt/data/Curso para mulheres.docx" style="color:var(--accent)">Curso_para_mulheres.docx</a></p>
+      <p><a href="/mnt/data/PDF - Webinário  Russell Brunson - Icaro de Carvalho.pdf" style="color:var(--accent)">PDF_Russell_Brunson_Icaro.pdf</a></p>
+    </div>
+  </section>
+
+  <!-- CHECKOUT -->
+  <section id="checkout" class="container fade" style="padding-bottom:120px">
+    <div style="max-width:720px;margin:0 auto;text-align:center">
+      <div class="card">
+        <h3>Finalizar inscrição</h3>
+        <p>Ao clicar em finalizar, você será direcionada para o sistema de pagamento escolhido. Posso integrar Hotmart, Gumroad, Stripe ou checkout direto via link.</p>
+        <div style="margin-top:12px">
+          <a class="btn-primary" id="pay-btn" href="#">Pagar R$27</a>
+        </div>
+        <p style="font-size:13px;color:var(--muted);margin-top:8px">Garantia de 7 dias — risco zero.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="fixed-cta fade" role="complementary">
+    <a class="btn-primary" href="#checkout">Quero me inscrever — R$27</a>
   </div>
-</section>
 
-<section class="fade-in">
-  <h2 class="section-title">O Que Você Vai Aprender</h2>
-  <div class="grid-2">
-    <div class="card"><ul>
-      <li>Correção imediata da pega — sem dor</li>
-      <li>Técnicas antifissura cientificamente comprovadas</li>
-      <li>Posições premium que reduzem pressão nos mamilos</li>
-      <li>Cicatrização acelerada das fissuras</li>
-      <li>Rotina antifissura para os 7 primeiros dias</li>
-    </ul></div>
-    <div class="card"><ul>
-      <li>Como evitar que a dor volte</li>
-      <li>Checklist diário de evolução</li>
-      <li>Hábitos que protegem seu conforto</li>
-      <li>Segredos usados por consultoras maternas de elite</li>
-    </ul></div>
-  </div>
-</section>
+  <footer class="fade">
+    <div class="container" style="text-align:center">
+      <p>© {year} • Método Antifissura — Amamentação Sem Dor • Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
-<section id="oferta" class="fade-in">
-  <h2 class="section-title">Oferta Exclusiva de Lançamento</h2>
-  <div class="card" style="text-align:center; max-width:720px; margin:auto;">
-    <p style="font-size:1.4rem; margin-bottom:24px;">Acesso completo ao Método Antifissura: aulas, checklists, PDFs e orientações essenciais.</p>
-    <p style="font-size:2.7rem; font-weight:700; margin-bottom:22px; color:var(--lux-dark);">Por apenas R$27</p>
-    <a class="btn-primary lux-hover" href="#checkout">Quero garantir agora</a>
-  </div>
-</section>
+  <script>
+    // IntersectionObserver fade-in
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade').forEach(el => obs.observe(el));
 
-<footer class="fade-in">
-  © 2025 Método Antifissura — Todos os direitos reservados.
-</footer>
-
-<script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) entry.target.classList.add('visible');
+    // Smooth scroll for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(!href || href === '#') return;
+        const target = document.querySelector(href);
+        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+      })
     });
-  }, { threshold: 0.2 });
 
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
+    // Pay placeholder - replace this with your checkout link
+    document.getElementById('pay-btn').addEventListener('click', (e)=>{
+      e.preventDefault();
+      alert('Substitua este botão pelo link do seu checkout (Hotmart/Gumroad/Stripe).');
+    });
+
+    // Accessibility: keyboard focus outlines only when Tab used
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Tab') document.body.classList.add('show-focus'); });
+  </script>
 </body>
 </html>
