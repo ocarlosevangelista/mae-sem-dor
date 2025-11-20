@@ -9,11 +9,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --lux-bg: #faf7f5;
+      --lux-bg: #f8f4f1;
       --lux-text: #3a2e2a;
-      --lux-gold: #d4b48c;
-      --lux-rose: #e8d2c4;
+      --lux-gold: #ceb08a;
+      --lux-rose: #f1e3dd;
       --lux-dark: #2a1e1b;
+      --soft-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      --fade-duration: 0.9s;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
@@ -21,126 +23,133 @@
       background: var(--lux-bg);
       color: var(--lux-text);
       line-height:1.5;
+      overflow-x:hidden;
     }
+
+    /* Transições suaves */
+    .fade-in {
+      opacity:0;
+      transform: translateY(40px);
+      transition: opacity var(--fade-duration) ease, transform var(--fade-duration) ease;
+    }
+    .fade-in.visible {
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    .lux-hover:hover {
+      transform: translateY(-6px);
+      box-shadow:0 20px 50px rgba(0,0,0,0.15);
+    }
+
     header.hero {
-      padding:120px 20px;
+      padding:140px 20px;
       text-align:center;
-      background: linear-gradient(135deg, #f9f3ef, #f2e7e2);
+      background: linear-gradient(145deg, #faeee8, #efe2dc);
+      position:relative;
+      overflow:hidden;
     }
+
+    /* Bolhas animadas de luxo */
+    .bubble {
+      position:absolute;
+      border-radius:50%;
+      filter: blur(60px);
+      opacity:0.35;
+      animation: float 16s infinite ease-in-out;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-40px) scale(1.15); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
+    .bubble1 { width:280px; height:280px; background:#d8bfa6; top:-40px; right:-20px; }
+    .bubble2 { width:320px; height:320px; background:#e4d2c5; bottom:-60px; left:-40px; animation-delay:2s; }
+
     .hero h1 {
       font-family:'Playfair Display', serif;
-      font-size:3rem;
+      font-size:3.4rem;
       max-width:900px;
       margin:0 auto 20px;
       color:var(--lux-dark);
     }
     .hero p {
-      max-width:700px;
-      margin:0 auto 40px;
-      font-size:1.25rem;
-      opacity:0.8;
+      max-width:740px;
+      margin:0 auto 50px;
+      font-size:1.35rem;
+      opacity:0.85;
     }
+
+    .video-container {
+      max-width:820px;
+      margin:40px auto 60px;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--soft-shadow);
+      transform:scale(0.94);
+      transition:0.6s ease;
+    }
+    .video-container:hover {
+      transform:scale(0.98);
+    }
+
     .btn-primary {
       background:var(--lux-gold);
-      padding:16px 32px;
+      padding:18px 38px;
       border-radius:50px;
       color:white;
       font-weight:600;
-      font-size:1.1rem;
+      font-size:1.15rem;
       text-decoration:none;
       display:inline-block;
-      transition:0.3s;
+      transition:0.35s ease;
+      box-shadow:0 8px 22px rgba(0,0,0,0.12);
     }
     .btn-primary:hover{
-      background:#c6a074;
+      background:#b89a74;
+      transform:translateY(-4px);
+      box-shadow:0 12px 28px rgba(0,0,0,0.18);
     }
+
     section {
-      padding:100px 20px;
+      padding:110px 20px;
       max-width:1100px;
       margin:auto;
     }
     h2.section-title{
       font-family:'Playfair Display', serif;
-      font-size:2.5rem;
+      font-size:2.7rem;
       text-align:center;
-      margin-bottom:40px;
+      margin-bottom:50px;
       color:var(--lux-dark);
     }
+
     .grid-2 {
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:40px;
     }
+
     .card {
       background:white;
-      padding:40px;
-      border-radius:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      padding:45px;
+      border-radius:24px;
+      box-shadow:var(--soft-shadow);
+      transition:0.4s ease;
     }
+
+    .card:hover { transform:translateY(-6px); }
+
     footer {
       text-align:center;
-      padding:40px 20px;
-      margin-top:80px;
+      padding:50px 20px;
+      margin-top:90px;
       background:white;
-      color:#988;
+      color:#8a7d7a;
     }
+
     @media(max-width:900px){
       .grid-2{ grid-template-columns:1fr; }
-      .hero h1{ font-size:2.3rem; }
+      .hero h1{ font-size:2.4rem; }
     }
-  </style>
-</head>
-<body>
-
-<header class="hero">
-  <h1>Amamentação Sem Dor em 7 Dias — O Método Premium Antifissura</h1>
-  <p>Um guia luxuoso, moderno e científico criado para mães sofisticadas que desejam viver a maternidade com conforto, tranquilidade e zero dor ao amamentar.</p>
-  <a href="#oferta" class="btn-primary">Quero Amamentar Sem Dor</a>
-</header>
-
-<section>
-  <h2 class="section-title">A Dor Não Faz Parte da Maternidade</h2>
-  <div class="grid-2">
-    <div class="card">
-      <p>Se você sente dor, ardência, cortes, sangramento ou insegurança na hora de amamentar, saiba: isso não é normal. O Método Antifissura foi criado para mulheres que valorizam conforto, saúde e bem-estar — e que desejam uma solução segura, acolhedora e comprovada.</p>
-    </div>
-    <div class="card">
-      <p>Baseado em técnicas de consultoria materna premium, evidências científicas e vivência real com mães de alta performance, o método resolve fissuras, corrige a pega e elimina a dor em poucos dias.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2 class="section-title">O Que Você Vai Aprender</h2>
-  <div class="grid-2">
-    <div class="card"><ul>
-      <li>Como corrigir a pega do bebê com suavidade</li>
-      <li>Técnicas antifissura testadas e aprovadas</li>
-      <li>Posições que reduzem totalmente a dor</li>
-      <li>Como cicatrizar fissuras rapidamente</li>
-      <li>Rotina antifissura para os 7 primeiros dias</li>
-    </ul></div>
-    <div class="card"><ul>
-      <li>Como evitar que a dor volte</li>
-      <li>Checklist diário para acompanhar sua evolução</li>
-      <li>Como amamentar com mais confiança e segurança</li>
-      <li>Segredos usados por consultoras maternas premium</li>
-    </ul></div>
-  </div>
-</section>
-
-<section id="oferta">
-  <h2 class="section-title">Oferta Exclusiva de Lançamento</h2>
-  <div class="card" style="text-align:center; max-width:700px; margin:auto;">
-    <p style="font-size:1.3rem; margin-bottom:20px;">Acesso completo ao Método Antifissura — vídeo aulas, checklists, PDFs e suporte resumido.</p>
-    <p style="font-size:2.5rem; font-weight:700; margin-bottom:20px; color:var(--lux-dark);">Por apenas R$27</p>
-    <a class="btn-primary" href="#checkout">Quero garantir agora</a>
-  </div>
-</section>
-
-<footer>
-  © 2025 Método Antifissura — Todos os direitos reservados.
-</footer>
-
-</body>
-</html>
